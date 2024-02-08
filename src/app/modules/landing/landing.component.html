@@ -1,3 +1,115 @@
-<p>landing works!</p>
-<button routerLink="register">register</button>
-<button routerLink="signin">sign in</button>
+<app-header></app-header>
+
+<div
+  class=""
+  style="background-image: linear-gradient(115deg, #e9e6f0, #52527d)"
+>
+  <div class="p-10 flex w-full h-[300px] md:h-[600px]">
+    <div
+      class="flex flex-col justify-center items-center w-full rounded-lg bg-cover bg-no-repeat"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1484807352052-23338990c6c6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <p
+        class="capitalize text-2xl md:text-5xl p-2 md:p-10 text-white font-semibold"
+      >
+        your complete booking partner is here
+      </p>
+      <div class="flex gap-5">
+        <button
+          routerLink="register"
+          class="md:w-28 w-20 h-10 bg-blue-500/50 hover:bg-blue-500 text-white font-medium capitalize rounded"
+        >
+          sign up
+        </button>
+        <button
+          routerLink="signin"
+          class="md:w-28 w-20 h-10 bg-blue-500/50 hover:bg-blue-500 text-white font-medium capitalize rounded"
+        >
+          sign in
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="pt-5 capitalize text-center">
+    <p class="text-2xl font-medium">what we are offering</p>
+  </div>
+  <div class="flex flex-col min-h-full p-10">
+    <!-- first section  -->
+    <div class="md:flex w-full rounded-lg p-5 h-full px-5 bg-black/80 mt-10">
+      <div
+        class="w-full flex md:text-8xl font-bold md:mt-32 text-white capitalize justify-center items-center bg-cover bg-no-repeat bg-center rounded-md md:ml-5 mx-auto h-28 md:min-h-[300px]"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1534238754819-d8e4470ce7cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        "
+      >
+        book your buses
+      </div>
+      <div
+        class="w-full text-white font-mono hidden md:flex capitalize justify-center p-10"
+      >
+        <p class="text-lg">
+          Experience seamless travel planning with our user-friendly website,
+          where we offer hassle-free bus booking services to destinations far
+          and wide. Whether you're embarking on a spontaneous getaway or
+          meticulously planning your next adventure, our platform provides a
+          convenient and efficient solution to all your travel needs. With a
+          vast network of bus operators and routes, you can effortlessly browse
+          schedules, compare prices, and secure your seats with just a few
+          clicks.
+          <span class="hidden md:flex">
+            Say goodbye to long queues and last-minute rushes – our intuitive
+            interface ensures a smooth booking process from start to finish.
+            Trust us to be your ultimate travel companion, committed to
+            providing reliable service and unparalleled convenience every step
+            of the way. Plan your journey with ease and let us take you where
+            you need to go.</span
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- second section -->
+    <div
+      class="md:flex bg-black/80 rounded-lg w-full h-full px-5 md:p-10 mt-10"
+    >
+      <div
+        class="w-full text-white font-mono hidden md:flex capitalize justify-center p-0"
+      >
+        <p class="text-lg">
+          Step into the world of entertainment with ease by utilizing our
+          website's seamless movie ticket booking service. Say goodbye to the
+          hassle of standing in long queues or facing sold-out shows – our
+          platform allows you to effortlessly browse through the latest movie
+          listings, select your preferred showtimes, and reserve your tickets in
+          advance, all from the comfort of your home. Whether you're craving the
+          thrill of a blockbuster action flick, the laughter of a comedy, or the
+          suspense of a thriller, our extensive range of movies ensures there's
+          something for everyone. With secure payment options and instant
+          confirmations, you can sit back, relax, and anticipate an
+          unforgettable cinematic experience. Trust us to be your go-to
+          destination for all your movie-going needs, where convenience meets
+          excitement at every click. Let us enhance your movie-going experience
+          and make every visit to the theater a memorable one.
+        </p>
+      </div>
+      <div
+        class="w-full flex md:text-8xl font-bold md:mt-32 text-white capitalize justify-center items-center bg-cover bg-no-repeat bg-center rounded-md md:ml-5 mx-auto h-28 md:min-h-[300px]"
+        style="
+          background-image: url('https://plus.unsplash.com/premium_photo-1683133290577-f1b47c4b8c05?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        "
+      >
+        see the latest movies
+      </div>
+    </div>
+  </div>
+
+  <div class="capitalize bg-green-200">
+    <p class="text-2xl font-medium text-center">meet our team</p>
+    <div>
+        
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

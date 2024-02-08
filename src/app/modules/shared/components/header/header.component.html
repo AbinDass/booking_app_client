@@ -1,0 +1,45 @@
+<div class="h-14 flex items-center shadow-2xl">
+  <div class="w-full">
+    <p>Logo here</p>
+  </div>
+
+  <div class="hidden md:flex w-[45%] capitalize">
+    <ul class="flex w-full justify-around">
+      <li>about</li>
+      <li>contact</li>
+      <li>blog</li>
+    </ul>
+  </div>
+
+  <div (click)="toggleMethod()" class="flex md:hidden text-black">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="100"
+      height="30"
+      viewBox="0 0 50 50"
+    >
+      <path
+        d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"
+      ></path>
+    </svg>
+  </div>
+
+  <div></div>
+</div>
+
+<div
+  *ngIf="toggle"
+  class="flex bg-black/40 capitalize text-white font-medium flex-col justify-center items-center fixed md:hidden w-[40%] top-0 z-1"
+>
+  <div
+    class="flex space-y-5 flex-col text-xl w-full h-[400px] items-center justify-around"
+  >
+    <p class="hover:bg-blue-500/50 w-full text-center cursor-pointer">about</p>
+    <p class="hover:bg-blue-500/50 w-full text-center cursor-pointer">
+      contact
+    </p>
+    <p class="hover:bg-blue-500/50 w-full text-center cursor-pointer">blog</p>
+  </div>
+</div>
