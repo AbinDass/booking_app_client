@@ -1,12 +1,15 @@
 <div class="h-14 flex items-center shadow-2xl">
   <div class="w-full">
-    <p>Logo here</p>
+    <p class="pl-10">
+      <span class="text-3xl font-bold text-blue-500">Book</span
+      ><span class="text-3xl font-bold text-green-500">Ease</span>
+    </p>
   </div>
 
   <div class="hidden md:flex w-[45%] capitalize">
     <ul class="flex w-full justify-around">
-      <li>about</li>
-      <li>contact</li>
+      <li><a href="#aboutUs"> about</a></li>
+      <li><a href="#contactUs">contact</a></li>
       <li>blog</li>
     </ul>
   </div>
@@ -34,11 +37,13 @@
   class="flex bg-black/40 capitalize text-white font-medium flex-col justify-center items-center fixed md:hidden w-[40%] top-0 z-1"
 >
   <div
-    class="flex space-y-5 flex-col text-xl w-full h-[400px] items-center justify-around"
+    class="flex space-y-5 flex-col text-xl w-full h-screen items-center justify-around"
   >
-    <p class="hover:bg-blue-500/50 w-full text-center cursor-pointer">about</p>
     <p class="hover:bg-blue-500/50 w-full text-center cursor-pointer">
-      contact
+      <a (click)="toggleMethod()" href="#aboutUs"> about</a>
+    </p>
+    <p class="hover:bg-blue-500/50 w-full text-center cursor-pointer">
+      <a (click)="toggleMethod()" href="#aboutUs"> contactUs</a>
     </p>
     <p class="hover:bg-blue-500/50 w-full text-center cursor-pointer">blog</p>
   </div>

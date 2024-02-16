@@ -1,55 +1,207 @@
-<div class="min-h-screen flex justify-center items-center " style="background-image: linear-gradient(115deg, #e9e6f0, #52527d)">
-    <div class="container mx-auto">
-      <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
-        <div class="w-full text-3xl font-bold text-yellow-400 lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1528493216645-608f76c087f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-          <h1 class="font-medium text-3xl mb-3">Welcome</h1>
-          <div class="bg-blue-500/50 p-5 rounded flex flex-col justify-center items-center">
-            <p class="font-medium text-xl text-white capitalize font-serif">why this rush -> book now </p>
-            <button  class="text-white bg-black/50 flex justify-center text-lg p-2 rounded font-semibold hover:cursor-pointer capitalize" routerLink="/signin">sign in</button>
-          </div>
-        </div>
-        <div class="w-full lg:w-1/2 py-16 px-12">
-          <h2  class="text-3xl font-bold capitalize mb-4">Register</h2>
-          <p class="mb-4 capitalize">
-            register your account free of cost 
+<div
+  class="min-h-screen flex justify-center items-center"
+  style="background-image: linear-gradient(115deg, #e9e6f0, #52527d)"
+>
+  <div class="container mx-auto">
+    <div
+      class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden"
+    >
+      <div
+        class="w-full text-3xl font-bold text-yellow-400 lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1528493216645-608f76c087f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        "
+      >
+        <h1 class="font-medium text-3xl mb-3">Welcome</h1>
+        <div
+          class="bg-blue-500/50 p-5 rounded flex flex-col justify-center items-center"
+        >
+          <p class="font-medium text-xl text-white capitalize font-serif">
+            why this rush -> book now
           </p>
-          <form>
-            
-            <div class="mt-5">
-              <input type="text" placeholder="name" class="border border-gray-400 py-1 px-2 w-full">
+          <button
+            class="text-white bg-black/50 flex justify-center text-lg p-2 rounded font-semibold hover:cursor-pointer capitalize"
+            routerLink="/signin"
+          >
+            sign in
+          </button>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 py-16 px-12">
+        <h2 class="text-3xl font-bold capitalize mb-4">Register</h2>
+        <p class="mb-4 capitalize">register your account free of cost</p>
+        <form [formGroup]="registerForm">
+          <div class="mt-5">
+            <input
+              type="text"
+              placeholder="name"
+              formControlName="name"
+              class="border border-gray-400 py-1 px-2 w-full"
+            />
+            <div
+              *ngIf="
+                registerForm.get('name')?.invalid &&
+                (registerForm.get('name')?.dirty ||
+                  registerForm.get('name')?.touched)
+              "
+            >
+              <span class="text-red-500 text-center"> name is required </span>
             </div>
-            <div class="mt-5">
-              <input type="text" placeholder="Email" class="border border-gray-400 py-1 px-2 w-full">
+          </div>
+          <div class="mt-5">
+            <input
+              type="text"
+              placeholder="Email"
+              class="border border-gray-400 py-1 px-2 w-full"
+              formControlName="email"
+            />
+            <div
+              *ngIf="
+                registerForm.get('email')?.invalid &&
+                (registerForm.get('email')?.dirty ||
+                  registerForm.get('email')?.touched)
+              "
+            >
+              <span class="text-red-500 text-center"> email is required </span>
             </div>
-            
-            <div class="grid grid-cols-2 mt-5 gap-5">
-                <select name="sex" id="sex" class="border border-gray-400 py-1 px-2">
-                    <option value="male">male</option>
-                    <option value="female">female</option>
-                    <option value="other">other</option>
-                </select>
-                <input type="number" placeholder="age" class="border border-gray-400 py-1 px-2" oninput="preventNegativeOne(event)">
+          </div>
+
+          <div class="grid grid-cols-2 mt-5 gap-5">
+            <div class="flex flex-col">
+              <select
+                name="sex"
+                id="sex"
+                formControlName="sex"
+                class="border border-gray-400 py-1 px-2"
+              >
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+
+              <div
+                *ngIf="
+                  registerForm.get('sex')?.invalid &&
+                  (registerForm.get('sex')?.dirty ||
+                    registerForm.get('sex')?.touched)
+                "
+              >
+                <span class="text-red-500 text-end"> gender is required </span>
+              </div>
             </div>
-            <div class="mt-5">
-              <input type="password" placeholder="Password" class="border border-gray-400 py-1 px-2 w-full">
+            <div class="flex flex-col">
+              <input
+                type="number"
+                placeholder="age"
+                formControlName="age"
+                class="border border-gray-400 py-1 px-2"
+                oninput="preventNegativeOne(event)"
+              />
+              <div
+                *ngIf="
+                  registerForm.get('age')?.invalid &&
+                  (registerForm.get('age')?.dirty ||
+                    registerForm.get('age')?.touched)
+                "
+              >
+                <span class="text-red-500 text-end"> age is required </span>
+              </div>
             </div>
-            <div class="mt-5">
-              <input type="password" placeholder="Confirm Password" class="border border-gray-400 py-1 px-2 w-full">
+          </div>
+
+          <div class="mt-5">
+            <input
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+              class="border border-gray-400 py-1 px-2 w-full"
+            />
+            <div
+              *ngIf="
+                registerForm.get('password')?.invalid &&
+                (registerForm.get('password')?.dirty ||
+                  registerForm.get('password')?.touched)
+              "
+            >
+              <div class="flex flex-col justify-start items-start">
+                <span class="text-red-500 text-center">
+                  * length shoud be 6</span
+                >
+                <span class="text-red-500 text-center">
+                  * atleast one capital and small
+                </span>
+                <span class="text-red-500 text-center">
+                  * atleast one special charecter
+                </span>
+                <span class="text-red-500 text-center"
+                  >* password is required</span
+                >
+              </div>
             </div>
-            <div class="mt-5">
-              <input type="checkbox" class="border border-gray-400">
-              <span>
-                I accept the <a href="#" class="text-purple-500 font-semibold">Terms of Use</a> &  <a href="#" class="text-purple-500 font-semibold">Privacy Policy</a> 
+          </div>
+          <div class="mt-5">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              formControlName="confirmPassword"
+              class="border border-gray-400 py-1 px-2 w-full"
+            />
+            <div
+              *ngIf="
+                registerForm.get('confirmPassword')?.invalid &&
+                (registerForm.get('confirmPassword')?.dirty ||
+                  registerForm.get('confirmPassword')?.touched)
+              "
+            >
+              <span class="text-red-500 text-end">
+                confirm password field is required
               </span>
             </div>
-            <div class="mt-5 flex gap-5">
-              <button class="w-full rounded bg-purple-500 py-3 text-center text-white">Register Now</button>
-              <button class="bg-blue-500 hover:bg-blue-700 w-28 text-white font-bold py-2 px-4 rounded flex items-center" style="background-image: url('https://images.unsplash.com/photo-1572059002053-8cc5ad2f4a38?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
-              </button>
-              
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="mt-5">
+            <input
+              type="checkbox"
+              formControlName="terms"
+              class="border border-gray-400"
+            />
+            <span>
+              I accept the
+              <a class="text-purple-500 font-semibold">Terms of Use</a>
+              &
+              <a class="text-purple-500 font-semibold">Privacy Policy</a>
+            </span>
+          </div>
+          <div
+            *ngIf="
+              registerForm.get('terms')?.invalid &&
+              (registerForm.get('terms')?.dirty ||
+                registerForm.get('terms')?.touched)
+            "
+          >
+            <span class="text-red-500 text-end">
+              agree with terms and conditions
+            </span>
+          </div>
+          <div class="mt-5 flex gap-5">
+            <button
+              [disabled]="registerForm.invalid"
+              class="disabled:cursor-not-allowed w-full rounded bg-purple-500 py-3 text-center text-white"
+              (click)="submitRegisterForm()"
+            >
+              Register Now
+            </button>
+            <button
+              class="bg-blue-500 hover:bg-blue-700 w-28 text-white font-bold py-2 px-4 rounded flex items-center"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1572059002053-8cc5ad2f4a38?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                background-size: cover;
+                background-position: center;
+              "
+            ></button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>

@@ -5,6 +5,7 @@ import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './landing.component';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { SharedModule } from '../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     LandingRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
     
   ]
 })

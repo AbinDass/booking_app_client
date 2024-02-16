@@ -9,18 +9,22 @@ import { UserModule } from './modules/user/user.module';
 import { BusModule } from './modules/bus/bus.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { LandingModule } from './modules/landing/landing.module';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     AdminModule,
     UserModule,
     BusModule,
     AuthModule,
-    LandingModule
+    LandingModule,
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
